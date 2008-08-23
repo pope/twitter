@@ -13,6 +13,9 @@ sudo gem install twitter will work just fine. For command line use, you'll need 
 	# or you can use post
 	Twitter::Base.new('your email', 'your password').post('post works too')
 
+  # If you also need to use a proxy, you can set those as options
+  Twitter::Base.new('your email', 'your password', :proxy_host => 'your-proxy-host.com', :proxy_port => 8080)
+
 	puts "Public Timeline", "=" * 50
 	Twitter::Base.new('your email', 'your password').timeline(:public).each do |s|
 	  puts s.text, s.user.name
